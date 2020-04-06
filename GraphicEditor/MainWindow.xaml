@@ -1,0 +1,35 @@
+﻿<Window x:Class="GraphicEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GraphicEditor"
+        mc:Ignorable="d"
+        Title="MainWindow" SizeToContent="Height" Height="350" Width="525" Loaded="MainWindow_OnLoaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Canvas x:Name="Canvas" Grid.Column="1" Margin="5" Background="White" />
+        <StackPanel Margin="5">
+            <GroupBox Header="Narzędzia" Padding="5">
+                <StackPanel>
+                    <RadioButton Margin="5" IsChecked="True" Checked="Draw_OnCheck">Rysuj</RadioButton>
+                    <RadioButton Margin="5" Checked="DrawPointByPoint_OnCheck">Rysuj punkty</RadioButton>
+                    <RadioButton Margin="5" Checked="Modify_OnCheck">Modyfikuj</RadioButton>
+                    <RadioButton Margin="5" Checked="Translate_OnCheck">Przesuń</RadioButton>
+                    <RadioButton Margin="5" Checked="TranslateByVector_OnCheck">Translacja</RadioButton>
+                    <RadioButton Margin="5" Checked="Rotate_OnCheck">Obróć</RadioButton>
+                    <RadioButton Margin="5" Checked="Scale_OnCheck">Skaluj</RadioButton>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="Opcje" Padding="5">
+                <ContentControl Content="{Binding ActiveOperation.OptionsControl, Mode=OneWay}" />
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Window>

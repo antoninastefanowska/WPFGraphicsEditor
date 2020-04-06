@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="GraphicEditor.DrawOptionsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GraphicEditor"
+             mc:Ignorable="d" Height="Auto" Width="Auto">
+    <StackPanel>
+        <Label Margin="5 5 5 0">Kształt</Label>
+        <ComboBox Margin="5 0 5 5" Padding="5">
+            <ComboBoxItem IsSelected="True" Selected="Line_OnSelected">Linia</ComboBoxItem>
+            <ComboBoxItem Selected="Rectangle_OnSelected">Prostokąt</ComboBoxItem>
+            <ComboBoxItem Selected="Circle_OnSelected">Okrąg</ComboBoxItem>
+        </ComboBox>
+        <Label Margin="5 5 5 0">Grubość pędzla</Label>
+        <TextBox Name="tbBrushSize" Margin="5 0 5 5" Padding="5" PreviewTextInput="NumberValidation" Text="{Binding CurrentStrokeThickness, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Margin="5 5 5 0">Pozycja X1:</Label>
+        <TextBox Name="tbPositionX1" Margin="5 0 5 5" Padding="5" PreviewTextInput="NumberValidation" />
+        <Label Margin="5 5 5 0">Pozycja Y1:</Label>
+        <TextBox Name="tbPositionY1" Margin="5 0 5 5" Padding="5" PreviewTextInput="NumberValidation" />
+        <Label Margin="5 5 5 0">Pozycja X2:</Label>
+        <TextBox Name="tbPositionX2" Margin="5 0 5 5" Padding="5" PreviewTextInput="NumberValidation" />
+        <Label Margin="5 5 5 0">Pozycja Y2:</Label>
+        <TextBox Name="tbPositionY2" Margin="5 0 5 5" Padding="5" PreviewTextInput="NumberValidation" />
+        <Button Margin="5" Padding="5" Click="Draw_OnClick">Rysuj</Button>
+    </StackPanel>
+</UserControl>

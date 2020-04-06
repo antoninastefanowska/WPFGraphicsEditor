@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="GraphicEditor.RotateOptionsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GraphicEditor"
+             mc:Ignorable="d" 
+             Height="Auto" Width="Auto">
+    <StackPanel>
+        <Label Margin="5 5 5 0">Pozycja X:</Label>
+        <TextBox Name="tbPositionX" Margin="5 0 5 5" Padding="5" Text="{Binding ActiveHandlePoint.X, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  PreviewTextInput="NumberValidation" />
+        <Label Margin="5 5 5 0">Pozycja Y:</Label>
+        <TextBox Name="tbPositionY" Margin="5 0 5 5" Padding="5" Text="{Binding ActiveHandlePoint.Y, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="NumberValidation" />
+        <Label Margin="5 5 5 0">Kąt:</Label>
+        <TextBox Name="tbAngle" Margin="5 0 5 5" Padding="5" PreviewTextInput="NumberValidation" />
+        <Button Margin="5" Padding="5" Click="Rotate_OnClick">Obróć</Button>
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="GraphicEditor.DrawPointByPointOptionsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GraphicEditor"
+             mc:Ignorable="d" 
+             Height="Auto" Width="Auto">
+    <StackPanel>
+        <Label Margin="5 5 5 0">Kształt</Label>
+        <ComboBox Margin="5 0 5 5" Padding="5">
+            <ComboBoxItem IsSelected="True" Selected="Curve_OnSelected">Krzywa</ComboBoxItem>
+            <ComboBoxItem Selected="Polygon_OnSelected">Wielokąt</ComboBoxItem>
+        </ComboBox>
+        <Label Margin="5 5 5 0">Grubość pędzla</Label>
+        <TextBox Name="tbBrushSize" Margin="5 0 5 5" Padding="5" PreviewTextInput="NumberValidation" Text="{Binding CurrentStrokeThickness, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Margin="5 5 5 0">Pozycja X:</Label>
+        <TextBox Name="tbPositionX" Margin="5 0 5 5" Padding="5" PreviewTextInput="NumberValidation" />
+        <Label Margin="5 5 5 0">Pozycja Y:</Label>
+        <TextBox Name="tbPositionY" Margin="5 0 5 5" Padding="5" PreviewTextInput="NumberValidation" />
+        <Button Margin="5" Padding="5" Click="AddPoint_OnClick">Dodaj punkt</Button>
+        <Button Margin="5" Padding="5" Click="Load_OnClick">Wczytaj</Button>
+        <Button Margin="5" Padding="5" Click="Save_OnClick">Zapisz</Button>
+    </StackPanel>
+</UserControl>
